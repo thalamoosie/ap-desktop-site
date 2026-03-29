@@ -6,3 +6,4 @@ dist/
 public/
 .DS_Store 
 cache/filecache/_gen/
+.hugo_build.lock

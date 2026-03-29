@@ -1,3 +1,9 @@
 baseURL = 'https://example.org/'
 locale = 'en-us'
-title = 'My New Hugo Project'
+title = 'AP Desktop 98'
+
+paginate = 5
+
+[params]
+description = "A retro desktop experience (tm)"
+author = "AP"

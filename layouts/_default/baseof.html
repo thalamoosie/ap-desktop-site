@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{ .Title }} - {{ .Site.Title }}</title>
+    <meta
+      name="description"
+      content="{{ .Description | default .Site.Params.description }}"
+    />
+  </head>
+  <body>
+    <div class="main">
+      <div class="sidebar">
+        <p>test placeholder goop</p>
+      </div>
+      <div class="content">{{ block "main" . }} {{ end }}</div>
+    </div>
+  </body>
+</html>
