@@ -8,13 +8,22 @@
       name="description"
       content="{{ .Description | default .Site.Params.description }}"
     />
+    {{ $css := resources.Get "css/main.css" | resources.Minify }}
+    <link rel="stylesheet" href="{{ $css.RelPermalink }}" />
   </head>
   <body>
-    <div class="main">
-      <div class="sidebar">
+    <div class="desktop">
+      <div class="navbar">
         <p>test placeholder goop</p>
+        <nav class="nav-container">
+          <a href="/">Home</a>
+          <a href="">Work</a>
+          <a href="">Blog</a>
+          <a href="">Contact</a>
+        </nav>
       </div>
       <div class="content">{{ block "main" . }} {{ end }}</div>
+      <div class="taskbar"><p>I am a Taskbar</p></div>
     </div>
   </body>
 </html>

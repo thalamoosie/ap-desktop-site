@@ -1,0 +1,52 @@
+.desktop {
+  display: grid;
+  min-height: 100vh;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 1fr auto;
+  grid-template-areas: "navbar" "content" "taskbar";
+  gap: 4px;
+  background: yellow;
+}
+
+.navbar {
+  grid-area: navbar;
+  background: blue;
+  padding: 10px;
+}
+
+.nav-container {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  margin-right: 1rem;
+  padding: 2px;
+  justify-content: space-evenly;
+}
+
+.content {
+  grid-area: content;
+  background: purple;
+}
+
+.taskbar {
+  grid-area: taskbar;
+  height: 40px;
+  background: lime;
+}
+
+@media (min-width: 768px) {
+  .desktop {
+    grid-template-columns: 200px 1fr;
+    grid-template-rows: 1fr auto;
+    grid-template-areas: "navbar content" "taskbar taskbar";
+  }
+  .navbar {
+    grid-area: navbar;
+    height: 100%;
+  }
+  .nav-container {
+    flex-direction: column;
+    justify-content: start;
+    height: 100%;
+  }
+}
