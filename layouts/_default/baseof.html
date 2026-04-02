@@ -12,6 +12,9 @@
     <link rel="stylesheet" href="{{ $css.RelPermalink }}" />
   </head>
   <body>
+    {{ $js := resources.Get "js/clock.js" | resources.Minify }}
+    <script src="{{ $js.RelPermalink }}"></script>
+</body>
     <div class="desktop">
       <div class="navbar">
         <p>test placeholder goop</p>
