@@ -12,48 +12,48 @@
     <link rel="stylesheet" href="{{ $css.RelPermalink }}" />
   </head>
   <body>
-    {{ $js := resources.Get "js/clock.js" | resources.Minify }}
-    <script src="{{ $js.RelPermalink }}"></script>
-</body>
-    <div class="desktop">
-      <div class="navbar">
-        <p>test placeholder goop</p>
-        <nav class="nav-container">
-          <a href="/">Home</a>
-          <a href="">Work</a>
-          <a href="">Blog</a>
-          <a href="">Contact</a>
-        </nav>
-      </div>
-      <div class="content">
-        <div class="inner-window">
-          <div class="window-header">
-            <p>Document - Notepad.exe</p>
-            <div class="window-controls">
-              <div class="window-btn">🗕</div>
-              <div class="window-btn">🗖</div>
-              <div class="window-btn">❌</div>
-            </div>
-          </div>
-          <div class="window-body">
-            {{ block "main" . }} {{ end }}
-            <h2>I'm in the window</h2>
-            <p>hi I'm a hacker</p>
+  </body>
+  <div class="desktop">
+    <div class="navbar">
+      <p>test placeholder goop</p>
+      <nav class="nav-container">
+        <a href="/">Home</a>
+        <a href="">Work</a>
+        <a href="">Blog</a>
+        <a href="">Contact</a>
+      </nav>
+    </div>
+    <div class="content">
+      <div class="inner-window">
+        <div class="window-header">
+          <p>Document - Notepad.exe</p>
+          <div class="window-controls">
+            <div class="window-btn">🗕</div>
+            <div class="window-btn">🗖</div>
+            <div class="window-btn">❌</div>
           </div>
         </div>
-      </div>
-      <div class="taskbar">
-        <div class="start-btn"><p>⊞ Stert</p></div>
-        <p>Admiral Taskbar</p>
-        <div class="system-tray">
-          <div class="icon-container">
-            <div class="tray-icon">🔊</div>
-            <div class="tray-icon">☎️</div>
-            <div class="tray-icon">🐵</div>
-          </div>
-          <div class="sys-clock">11:38 PM</div>
+        <div class="window-body">
+          {{ block "main" . }} {{ end }}
+          <h2>I'm in the window</h2>
+          <p>hi I'm a hacker</p>
         </div>
       </div>
     </div>
+    <div class="taskbar">
+      <div class="start-btn"><p>⊞ Stert</p></div>
+      <p>Admiral Taskbar</p>
+      <div class="system-tray">
+        <div class="icon-container">
+          <div class="tray-icon">🔊</div>
+          <div class="tray-icon">☎️</div>
+          <div class="tray-icon">🐵</div>
+        </div>
+        <div class="sys-clock">11:38 PM</div>
+      </div>
+    </div>
+  </div>
+  {{ $js := resources.Get "js/clock.js" | resources.Minify }}
+  <script src="{{ $js.RelPermalink }}"></script>
   </body>
 </html>
