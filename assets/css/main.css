@@ -35,13 +35,50 @@ body {
 
 .content {
   grid-area: content;
+  padding: 12px;
   background: purple;
 }
 
+/* Inner Windows */
+.window-header {
+  background: green;
+}
+
+.inner-window {
+  background: pink;
+  height: 100%;
+}
+
+.window-header {
+  padding: 6px;
+}
+
+.window-body {
+  padding: 20px;
+}
+
+/* Taskbar */
 .taskbar {
   grid-area: taskbar;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   height: 40px;
   background: lime;
+  padding: 0 8px;
+}
+
+.start-btn {
+  background: red;
+  margin: 40px 0;
+  width: 100px;
+  height: 32px;
+}
+
+.system-tray {
+  background: orange;
+  margin: 4px 0;
+  height: 32px;
 }
 
 @media (min-width: 768px) {

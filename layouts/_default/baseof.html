@@ -22,8 +22,25 @@
           <a href="">Contact</a>
         </nav>
       </div>
-      <div class="content">{{ block "main" . }} {{ end }}</div>
-      <div class="taskbar"><p>I am a Taskbar</p></div>
+      <div class="content">
+        <div class="inner-window">
+          <div class="window-header">
+            <p>Document - Notepad.exe</p>
+          </div>
+          <div class="window-body">
+            {{ block "main" . }} {{ end }}
+            <h2>I'm in the window</h2>
+            <p>hi</p>
+          </div>
+        </div>
+      </div>
+      <div class="taskbar">
+        <div class="start-btn"><p>Stert</p></div>
+        <p>I am a Taskbar</p>
+        <div class="system-tray">
+          <div class="sys-clock">11:38 PM</div>
+        </div>
+      </div>
     </div>
   </body>
 </html>
