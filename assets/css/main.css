@@ -8,7 +8,9 @@
   /* The Colors, Duke */
   --main-gray: #c0c0c0;
   --dark-gray: #808080;
+  --drop-shadow: #444444;
   --light-gray: #e0e0e0;
+  --highlight-color: #fff;
   --accent-color: #008080;
   /* Dimensions */
   --taskbar-height: 2.5rem;
@@ -26,7 +28,6 @@ body {
   grid-template-rows: auto 1fr auto;
   grid-template-areas: "navbar" "content" "taskbar";
   gap: 4px;
-  background: yellow;
 }
 
 .navbar {
@@ -72,6 +73,7 @@ body {
 .window-btn {
   display: flex;
   justify-content: center;
+  background: var(--main-gray);
   border: 1px solid blue;
   width: 24px;
 }
@@ -96,26 +98,36 @@ body {
   justify-content: space-between;
   align-items: center;
   height: var(--taskbar-height);
-  background: lime;
+  background: var(--main-gray);
   padding: 0 8px;
+  border-top: 3px solid var(--light-gray);
 }
 
 .start-btn {
-  background: red;
+  background: var(--main-gray);
   margin: 40px 0;
   width: 100px;
   height: var(--taskbar-element-height);
   padding: 0 8px;
+  border: 2px solid;
+  border-color: #ffffff #808080 #808080 #ffffff;
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+  box-shadow: 2px 2px 0 var(--drop-shadow);
 }
 /* Sys Tray - Lives in taskbar */
 .system-tray {
   display: flex;
   align-items: center;
   gap: 8px;
-  background: orange;
+  background: var(--main-gray);
   margin: 4px 0;
   padding: 0 8px;
   height: var(--taskbar-element-height);
+  border: 2px inset var(--main-gray);
+  box-shadow:
+    inset 1px 1px 0 var(--dark-gray),
+    inset -1px -1px 0 var(--light-gray);
 }
 
 .icon-container {
