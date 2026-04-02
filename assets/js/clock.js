@@ -1,7 +1,6 @@
 "use strict";
 
 const systemClock = document.querySelector(".sys-clock");
-console.log("Found element:", systemClock);
 
 const updateClock = function () {
   const date = new Date();
