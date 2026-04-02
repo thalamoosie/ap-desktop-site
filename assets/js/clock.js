@@ -11,4 +11,5 @@ const updateClock = function () {
   systemClock.textContent = currentTime;
 };
 
+updateClock();
 setInterval(updateClock, 1000);
