@@ -24,6 +24,10 @@ body {
   padding: 10px;
 }
 
+.navbar a {
+  color: pink;
+}
+
 .nav-container {
   display: flex;
   flex-direction: row;
@@ -41,7 +45,13 @@ body {
 
 /* Inner Windows */
 .window-header {
+  display: flex;
+  justify-content: space-between;
   background: green;
+}
+
+.window-controls {
+  background: yellowgreen;
 }
 
 .inner-window {
@@ -74,11 +84,16 @@ body {
   width: 100px;
   height: 32px;
 }
-
+/* Sys Tray - Lives in taskbar */
 .system-tray {
   background: orange;
   margin: 4px 0;
   height: 32px;
+}
+
+.icon-container {
+  display: flex;
+  align-items: center;
 }
 
 @media (min-width: 768px) {
