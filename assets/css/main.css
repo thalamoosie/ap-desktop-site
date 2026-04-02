@@ -4,6 +4,17 @@
   box-sizing: border-box;
 }
 
+:root {
+  /* The Colors, Duke */
+  --main-gray: #c0c0c0;
+  --dark-gray: #808080;
+  --light-gray: #e0e0e0;
+  --accent-color: #008080;
+  /* Dimensions */
+  --taskbar-height: 2.5rem;
+  --taskbar-element-height: 2rem;
+}
+
 body {
   background: black;
   font-family: "MS Sans Serif", Arial, sans-serif;
@@ -51,7 +62,18 @@ body {
 }
 
 .window-controls {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
   background: yellowgreen;
+  border: 1px solid blue;
+}
+
+.window-btn {
+  display: flex;
+  justify-content: center;
+  border: 1px solid blue;
+  width: 24px;
 }
 
 .inner-window {
@@ -73,7 +95,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 40px;
+  height: var(--taskbar-height);
   background: lime;
   padding: 0 8px;
 }
@@ -82,18 +104,24 @@ body {
   background: red;
   margin: 40px 0;
   width: 100px;
-  height: 32px;
+  height: var(--taskbar-element-height);
+  padding: 0 8px;
 }
 /* Sys Tray - Lives in taskbar */
 .system-tray {
+  display: flex;
+  align-items: center;
+  gap: 8px;
   background: orange;
   margin: 4px 0;
-  height: 32px;
+  padding: 0 8px;
+  height: var(--taskbar-element-height);
 }
 
 .icon-container {
   display: flex;
   align-items: center;
+  gap: 4px;
 }
 
 @media (min-width: 768px) {
