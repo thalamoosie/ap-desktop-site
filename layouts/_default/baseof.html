@@ -26,7 +26,11 @@
         <div class="inner-window">
           <div class="window-header">
             <p>Document - Notepad.exe</p>
-            <div class="window-controls"><p>🗕🗖❌</p></div>
+            <div class="window-controls">
+              <div class="window-btn">🗕</div>
+              <div class="window-btn">🗖</div>
+              <div class="window-btn">❌</div>
+            </div>
           </div>
           <div class="window-body">
             {{ block "main" . }} {{ end }}
