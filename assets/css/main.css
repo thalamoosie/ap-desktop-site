@@ -1,3 +1,10 @@
+@font-face {
+  font-family: "W95FA";
+  src: url("/fonts/W95FA.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -6,17 +13,32 @@
 
 :root {
   /* The Colors, Duke */
+  --highlight-color: #fff;
+  --light-gray: #e0e0e0;
   --main-gray: #c0c0c0;
   --dark-gray: #808080;
-  --light-gray: #e0e0e0;
+  --drop-shadow: #444444;
+  --frame-shadow: #0a0a0a;
   --accent-color: #008080;
   /* Dimensions */
-  --taskbar-height: 2.5rem;
-  --taskbar-element-height: 2rem;
+  --taskbar-height: 2rem;
+  --taskbar-element-height: calc(var(--taskbar-height) - 4px); /* Bevels */
+  --border-raised-outer:
+    inset -1px -1px var(--frame-shadow), inset 1px 1px var(--highlight-color);
+  --border-raised-inner:
+    inset -2px -2px var(--dark-gray), inset 2px 2px var(--light-gray);
+  /* Window Title Gradients */
+  --dark-blue: #000080;
+  --medium-blue: #0639a2;
+  --blue-gradient: linear-gradient(
+    to right,
+    var(--dark-blue),
+    var(--medium-blue)
+  );
 }
 
 body {
-  background: black;
+  background: var(--accent-color);
   font-family: "MS Sans Serif", Arial, sans-serif;
 }
 .desktop {
@@ -26,12 +48,10 @@ body {
   grid-template-rows: auto 1fr auto;
   grid-template-areas: "navbar" "content" "taskbar";
   gap: 4px;
-  background: yellow;
 }
 
 .navbar {
   grid-area: navbar;
-  background: blue;
   padding: 10px;
 }
 
@@ -51,7 +71,6 @@ body {
 .content {
   grid-area: content;
   padding: 12px;
-  background: purple;
 }
 
 /* Inner Windows */
@@ -72,6 +91,7 @@ body {
 .window-btn {
   display: flex;
   justify-content: center;
+  background: var(--main-gray);
   border: 1px solid blue;
   width: 24px;
 }
@@ -96,32 +116,56 @@ body {
   justify-content: space-between;
   align-items: center;
   height: var(--taskbar-height);
-  background: lime;
-  padding: 0 8px;
+  white-space: nowrap;
+  background: var(--main-gray);
+  padding: 0 3px 0 4px;
+  border-top: 2px solid var(--light-gray);
+  border-bottom: 2px solid var(--drop-shadow);
 }
 
 .start-btn {
-  background: red;
-  margin: 40px 0;
-  width: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--main-gray);
+  margin: 0;
+  gap: 4px;
   height: var(--taskbar-element-height);
   padding: 0 8px;
+  image-rendering: pixelated;
+  border: none;
+  box-shadow: var(--border-raised-outer), var(--border-raised-inner);
 }
 /* Sys Tray - Lives in taskbar */
 .system-tray {
   display: flex;
   align-items: center;
-  gap: 8px;
-  background: orange;
-  margin: 4px 0;
-  padding: 0 8px;
+  gap: 6px;
+  background: var(--main-gray);
+  margin: 0;
+  padding: 0 6px;
   height: var(--taskbar-element-height);
+  border: none;
+  box-shadow:
+    inset 1px 1px 0 var(--dark-gray),
+    inset -1px -1px 0 var(--highlight-color);
 }
 
 .icon-container {
   display: flex;
   align-items: center;
   gap: 4px;
+}
+
+.tray-icon {
+  display: flex;
+  align-items: center;
+  image-rendering: pixelated;
+}
+
+.pixel-font {
+  font-family: "W95FA", "MS Sans Serif", Arial, sans-serif;
+  font-size: 16px;
 }
 
 @media (min-width: 768px) {
