@@ -23,6 +23,7 @@
   /* Dimensions */
   --taskbar-height: 2rem;
   --taskbar-element-height: calc(var(--taskbar-height) - 4px); /* Bevels */
+  --window-title-height: 2.25rem;
   --border-raised-outer:
     inset -1px -1px var(--frame-shadow), inset 1px 1px var(--highlight-color);
   --border-raised-inner:
@@ -30,10 +31,14 @@
   /* Window Title Gradients */
   --dark-blue: #000080;
   --medium-blue: #0639a2;
+  --med-l-blue: #0a56b4;
+  --light-blue: #1084d0;
   --blue-gradient: linear-gradient(
     to right,
     var(--dark-blue),
-    var(--medium-blue)
+    var(--medium-blue),
+    var(--med-l-blue),
+    var(--light-blue)
   );
 }
 
@@ -77,7 +82,10 @@ body {
 .window-header {
   display: flex;
   justify-content: space-between;
-  background: green;
+  background: var(--blue-gradient);
+  height: var(--window-title-height);
+  color: var(--highlight-color);
+  font-weight: bold;
 }
 
 .window-controls {
