@@ -28,8 +28,13 @@
   --border-raised-inner:
     inset -2px -2px var(--dark-gray), inset 2px 2px var(--light-gray);
   /* Window Title Gradients */
-  --dark-color: #000080;
-  --medium-gradient: #0639a2;
+  --dark-blue: #000080;
+  --medium-blue: #0639a2;
+  --blue-gradient: linear-gradient(
+    to right,
+    var(--dark-blue),
+    var(--medium-blue)
+  );
 }
 
 body {
