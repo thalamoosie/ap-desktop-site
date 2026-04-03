@@ -1,3 +1,10 @@
+@font-face {
+  font-family: "W95FA";
+  src: url("/fonts/W95FA.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -6,18 +13,20 @@
 
 :root {
   /* The Colors, Duke */
+  --highlight-color: #fff;
+  --light-gray: #e0e0e0;
   --main-gray: #c0c0c0;
   --dark-gray: #808080;
   --drop-shadow: #444444;
-  --light-gray: #e0e0e0;
-  --highlight-color: #fff;
+  --frame-shadow: #0a0a0a;
   --accent-color: #008080;
   /* Dimensions */
-  --taskbar-height: 2.5rem;
-  --taskbar-element-height: 2rem;
-  /* Bevels */
-  --border-raised-outer: -1px -1px 0 #ffffff, 1px 1px 0 #808080;
-  --border-raised-inner: -2px -2px 0 #dfdfdf, 2px 2px 0 #404040;
+  --taskbar-height: 2.25rem;
+  --taskbar-element-height: calc(var(--taskbar-height) - 9px); /* Bevels */
+  --border-raised-outer:
+    inset -1px -1px var(--frame-shadow), inset 1px 1px var(--highlight-color);
+  --border-raised-inner:
+    inset -2px -2px var(--dark-gray), inset 2px 2px var(--light-gray);
 }
 
 body {
@@ -101,15 +110,20 @@ body {
   justify-content: space-between;
   align-items: center;
   height: var(--taskbar-height);
+  white-space: nowrap;
   background: var(--main-gray);
-  padding: 0 8px;
-  border-top: 3px solid var(--light-gray);
+  padding: 0 3px 0 4px;
+  border-top: 2px solid var(--light-gray);
+  border-bottom: 2px solid var(--drop-shadow);
 }
 
 .start-btn {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   background: var(--main-gray);
-  margin: 40px 0;
-  width: 100px;
+  margin: 4px 0;
+  gap: 4px;
   height: var(--taskbar-element-height);
   padding: 0 8px;
   image-rendering: pixelated;
@@ -125,16 +139,21 @@ body {
   margin: 4px 0;
   padding: 0 8px;
   height: var(--taskbar-element-height);
-  border: 2px inset var(--main-gray);
+  border: none;
   box-shadow:
     inset 1px 1px 0 var(--dark-gray),
-    inset -1px -1px 0 var(--light-gray);
+    inset -1px -1px 0 var(--highlight-color);
 }
 
 .icon-container {
   display: flex;
   align-items: center;
   gap: 4px;
+}
+
+.pixel-font {
+  font-family: "W95FA", "MS Sans Serif", Arial, sans-serif;
+  font-size: 16px;
 }
 
 @media (min-width: 768px) {
