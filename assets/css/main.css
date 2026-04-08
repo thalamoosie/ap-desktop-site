@@ -91,30 +91,49 @@ body {
 .window-controls {
   display: flex;
   justify-content: center;
-  gap: 8px;
-  background: yellowgreen;
-  border: 1px solid blue;
+  gap: 3px;
 }
 
 .window-btn {
   display: flex;
   justify-content: center;
   background: var(--main-gray);
-  border: 1px solid blue;
+  box-shadow: var(--border-raised-outer), var(--border-raised-inner);
+
   width: 24px;
 }
 
 .inner-window {
-  background: pink;
+  background: var(--main-gray);
   height: 100%;
+  box-shadow: var(--border-raised-outer), var(--border-raised-inner);
+  padding: 3px;
+  display: flex;
+  flex-direction: column;
 }
 
 .window-header {
   padding: 6px;
+  align-items: center;
+  text-shadow: 1px 0 0 currentColor;
+  font-weight: normal;
 }
 
 .window-body {
-  padding: 20px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.window-body-inner {
+  background: lightgray;
+  flex: 1;
+  box-sizing: border-box;
+  padding: 10px;
+  box-shadow:
+    inset 1px 1px 0 var(--dark-gray),
+    inset -1px -1px 0 var(--highlight-color);
 }
 
 /* Taskbar */
