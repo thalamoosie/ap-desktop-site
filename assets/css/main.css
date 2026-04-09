@@ -60,9 +60,34 @@ body {
   padding: 10px;
 }
 
-.navbar a {
-  color: pink;
+.desktop-icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  width: 80px;
+  text-decoration: none;
+  color: white;
 }
+
+.desktop-icon:focus span,
+.desktop-icon:hover span {
+  background: var(--dark-blue);
+  color: white;
+}
+
+.desktop-icon:hover img,
+.desktop-icon:focus img {
+  filter: brightness(0.5) sepia(1) hue-rotate(190deg) saturate(4);
+}
+
+.desktop-icon span {
+  white-space: nowrap;
+}
+
+/* .navbar a {
+  color: pink;
+} */
 
 .nav-container {
   display: flex;
@@ -70,7 +95,7 @@ body {
   gap: 8px;
   margin-right: 1rem;
   padding: 2px;
-  justify-content: space-evenly;
+  justify-content: center;
 }
 
 .content {
@@ -208,6 +233,9 @@ body {
   .nav-container {
     flex-direction: column;
     justify-content: start;
+    align-items: center;
     height: 100%;
+    gap: 24px;
+    padding-top: 32px;
   }
 }
