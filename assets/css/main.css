@@ -20,6 +20,7 @@
   --drop-shadow: #444444;
   --frame-shadow: #0a0a0a;
   --accent-color: #008080;
+  --color-tooltip: #fefedd;
   /* Dimensions */
   --taskbar-height: 2rem;
   --taskbar-element-height: calc(var(--taskbar-height) - 6px);
