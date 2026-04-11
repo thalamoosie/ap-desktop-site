@@ -15,28 +15,33 @@
   </body>
   <div class="desktop">
     <div class="navbar">
-      <p>test placeholder goop</p>
-      <nav class="nav-container">
-        <a href="/">Home</a>
-        <a href="">Work</a>
-        <a href="">Blog</a>
-        <a href="">Contact</a>
+      <nav class="nav-container pixel-font">
+        <a href="/" class="desktop-icon"><img src="/images/nav/home-2k.png"><span>Home</span></a>
+
+        <a href="/work" class="desktop-icon"><img src="/images/nav/work-chip.png">        <span>Work</span>
+        </a>
+        <a href="/blog" class="desktop-icon"><img src="/images/nav/blog-rbin.png">        <span>Blog</span>
+        </a>
+        <a href="/contact" class="desktop-icon"><img src="/images/nav/contact-ltr.png"><span>Contact</span>
+        </a>
       </nav>
     </div>
     <div class="content">
       <div class="inner-window">
-        <div class="window-header">
-          <p>Document - Notepad.exe</p>
+        <div class="window-header pixel-font">
+          <p>Duckument - Quackpad.exe</p>
           <div class="window-controls">
-            <div class="window-btn">🗕</div>
-            <div class="window-btn">🗖</div>
-            <div class="window-btn">❌</div>
+            <div class="window-btn btn-min"></div>
+            <div class="window-btn btn-max"></div>
+            <div class="window-btn btn-close"></div>
           </div>
         </div>
         <div class="window-body">
-          {{ block "main" . }} {{ end }}
-          <h2>I'm in the window</h2>
-          <p>hi I'm a hacker</p>
+          <div class="window-body-inner">
+            {{ block "main" . }} {{ end }}
+            <h2>I'm in the window</h2>
+            <p>hi I'm a hacker</p>
+          </div>
         </div>
       </div>
     </div>
