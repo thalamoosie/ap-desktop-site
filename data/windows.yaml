@@ -1,0 +1,5 @@
+main:
+  windowTitle: "Untitled Duckument - QuackPad.exe"
+  min: true
+  max: true
+  close: true 
