@@ -16,31 +16,11 @@
   <body>
     <div class="desktop">
       <div class="navbar">
-        <nav class="nav-container pixel-font">
-          <a href="/" class="desktop-icon"
-            ><img src="/images/nav/home-2k.png" /><span>Home</span>
-          <a href="/work" class="desktop-icon"
-            ><img src="/images/nav/work-chip.png" /> <span>Work</span>
-          </a>
-          <a href="/blog" class="desktop-icon"
-            ><img src="/images/nav/blog-rbin.png" /> <span>Blog</span>
-            <div class="tooltip" role="tooltip">Thinking is dangerous</div>
-          </a>
-          <a href="/contact" class="desktop-icon"
-            ><img src="/images/nav/contact-ltr.png" /><span>Contact</span>
-          </a>
-        </nav>
+        {{ partial "navbar" .}}
       </div>
       <div class="content">
         <div class="inner-window">
-          <div class="window-header pixel-font">
-            <p>Duckument - Quackpad.exe</p>
-            <div class="window-controls">
-              <div class="window-btn btn-min"></div>
-              <div class="window-btn btn-max"></div>
-              <div class="window-btn btn-close"></div>
-            </div>
-          </div>
+          {{ partial "window/header" (dict "windowTitle" "Untitled Duckument - QuackPad.exe" "close" true ) }}
           <div class="window-body">
             <div class="window-body-inner">
               {{ block "main" . }} {{ end }}
@@ -48,53 +28,7 @@
           </div>
         </div>
       </div>
-      <div class="taskbar pixel-font">
-        <div class="start-btn pixel-font">
-          <img
-            src="/images/start-icon.png"
-            alt="Start"
-            width="18"
-            height="18"
-          />
-          Start
-        </div>
-        <p>Admiral Taskbar</p>
-        <div class="system-tray">
-          <div class="icon-container">
-            <div class="tray-icon" data-tooltip="Display Settings">
-              <img
-                src="/images/systray-display.png"
-                alt="Display Icon"
-                width="16"
-                height="16"
-              />
-            </div>
-            <div class="tray-icon">
-              <img
-                src="/images/systray-modem.png"
-                alt="Dial-Up Connection"
-                width="16"
-                height="16"
-              />
-            </div>
-            <div
-              class="tray-icon"
-              data-tooltip="Bonzi Buddy eek eek monke get peanut oaoi break text too long test"
-            >
-              <img
-                src="/images/bonzi-buddy.png"
-                alt="Purple Monkey"
-                width="16"
-                height="16"
-              />
-              <div class="tooltip" role="tooltip">
-                Spyware? More like free real estate.
-              </div>
-            </div>
-          </div>
-          <div class="sys-clock"></div>
-        </div>
-      </div>
+      {{ partial "taskbar" . }}
     </div>
     {{ $js := resources.Get "js/clock.js" | resources.Minify }}
     <script src="{{ $js.RelPermalink }}"></script>

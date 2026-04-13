@@ -21,6 +21,7 @@
   --frame-shadow: #0a0a0a;
   --accent-color: #008080;
   --color-tooltip: #fefedd;
+  --window-background: #fff;
   /* Dimensions */
   --taskbar-height: 2rem;
   --taskbar-element-height: calc(var(--taskbar-height) - 6px);
@@ -205,7 +206,7 @@ body {
 }
 
 .window-body-inner {
-  background: lightgray;
+  background: var(--window-background);
   flex: 1;
   box-sizing: border-box;
   padding: 10px;
