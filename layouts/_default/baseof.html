@@ -8,11 +8,11 @@
       name="description"
       content="{{ .Description | default .Site.Params.description }}"
     />
-    {{ $css := resources.Get "css/main.css" | resources.Minify }}
+
+    {{ $css := resources.Match "css/*.css" | resources.Concat "css/bundle.css" | resources.Minify }}
     <link rel="stylesheet" href="{{ $css.RelPermalink }}" />
   </head>
   <body>
-  </body>
   <div class="desktop">
     <div class="navbar">
       <nav class="nav-container pixel-font">
@@ -50,15 +50,15 @@
       <p>Admiral Taskbar</p>
       <div class="system-tray">
         <div class="icon-container">
-          <div class="tray-icon"><img src="/images/systray-display.png" alt="Display Icon" width="16" height="16"></div>
+          <div class="tray-icon" data-tooltip="Display Settings"><img src="/images/systray-display.png" alt="Display Icon" width="16" height="16"></div>
           <div class="tray-icon"><img src="/images/systray-modem.png" alt="Dial-Up Connection" width="16" height="16"></div>
-          <div class="tray-icon"><img src="/images/bonzi-buddy.png" alt="Purple Monkey" width="16" height="16"></div>
+          <div class="tray-icon" data-tooltip="Bonzi Buddy eek eek monke get peanut oaoi break text too long test"><img src="/images/bonzi-buddy.png" alt="Purple Monkey" width="16" height="16"></div>
         </div>
         <div class="sys-clock"></div>
       </div>
     </div>
   </div>
-  {{ $js := resources.Get "js/clock.js" | resources.Minify }}
+    {{ $js := resources.Get "js/clock.js" | resources.Minify }}
   <script src="{{ $js.RelPermalink }}"></script>
   </body>
 </html>

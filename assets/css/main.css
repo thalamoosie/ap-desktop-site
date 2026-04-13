@@ -275,6 +275,11 @@ body {
   font-size: 16px;
 }
 
+.tooltip {
+  background: var(--color-tooltip);
+  border: 1px solid brown;
+}
+
 @media (min-width: 768px) {
   .desktop {
     grid-template-columns: 200px 1fr;

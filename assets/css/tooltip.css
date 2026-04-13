@@ -1,0 +1,35 @@
+:root {
+    --color-tooltip: #fefedd;
+}
+
+/* .tooltip {
+  background: var(--color-tooltip);
+  border: 1px solid red;
+  justify-content: center;
+  padding: 0px 80px 0px 40px;
+} */
+
+[data-tooltip] {
+    position: relative;
+}
+
+[data-tooltip]::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 100%;
+    right: 0;
+    background: var(--color-tooltip);
+    border: 1px solid black;
+    padding: 2px 6px;
+    pointer-events: none;
+    white-space: normal;
+    max-width: 200px;
+    width: max-content;
+
+    visibility: hidden;
+}
+
+[data-tooltip]:hover::after {
+    visibility: visible;
+    opacity: 1;
+}
