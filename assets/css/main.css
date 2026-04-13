@@ -104,6 +104,10 @@ body {
   justify-content: center;
 }
 
+.nav-container span {
+    padding: 2px 3px 1px 3px;
+}
+
 .content {
   grid-area: content;
   padding: 12px;
