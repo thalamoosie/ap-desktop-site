@@ -1,6 +1,6 @@
 {{ define "main" }}
-<h1>AP Desktop 98'</h1>
-<h2>Subheading</h2>
-<h3>tiny baby heading</h3>
-<p>More shit will go here eventually</p>
+  <div class="inner-window">
+    {{ partial "window/header" .Site.Data.windows.main }}
+    {{ partial "window/terminal-body" }}
+  </div>
 {{ end }}

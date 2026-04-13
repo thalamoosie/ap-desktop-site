@@ -19,15 +19,7 @@
         {{ partial "navbar" .}}
       </div>
       <div class="content">
-        <div class="inner-window">
-          {{ $win := .Site.Data.windows.main }}
-          {{ partial "window/header" $win }}
-          <div class="window-body">
-            <div class="window-body-inner">
-              {{ block "main" . }} {{ end }}
-            </div>
-          </div>
-        </div>
+        {{ block "main" . }} {{ end }}
       </div>
       {{ partial "taskbar" . }}
     </div>
