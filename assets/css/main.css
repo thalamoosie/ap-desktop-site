@@ -270,14 +270,16 @@ body {
   image-rendering: pixelated;
 }
 
+@supports (anchor-name: --test) {
+  .tray-icon {
+    anchor-name: --tray-tooltip;
+    anchor-scope: --tray-tooltip;
+  }
+}
+
 .pixel-font {
   font-family: "W95FA", "MS Sans Serif", Arial, sans-serif;
   font-size: 16px;
-}
-
-.tooltip {
-  background: var(--color-tooltip);
-  border: 1px solid brown;
 }
 
 @media (min-width: 768px) {
