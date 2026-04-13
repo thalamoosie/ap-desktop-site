@@ -5,25 +5,37 @@
 .tooltip {
   background: var(--color-tooltip);
   border: 1px solid rgb(41, 18, 18);
-  justify-content: center;
   padding: 1px 3px 1px 3px;
-  max-width: 200px;
-  max-inline-size: 200px;
-
-  overflow-wrap: break-word;
-  display: none;
   border-radius: 2px;
+  text-align: center;
+  display: none;
 }
 
 @supports (anchor-name: --test) {
   .tooltip {
-    position-anchor: --tray-tooltip;
-    position-area: top;
-    position: fixed;
+    position: absolute;
+    max-width: 300px;
     overflow-wrap: break-word;
-    max-inline-size: 200px;
+    white-space: normal;
+  }
+
+  .tray-icon .tooltip {
+    position-anchor: --tray-tooltip;
+    bottom: anchor(top);
+    justify-self: anchor-center;
+    margin-bottom: 2px;
+    margin-right: 10px;
   }
   .tray-icon:hover .tooltip {
+    display: block;
+  }
+  .desktop-icon .tooltip {
+    position-anchor: --nav-tooltip;
+    left: anchor(right);
+    align-self: anchor-center;
+    color: black;
+  }
+  .desktop-icon:hover .tooltip {
     display: block;
   }
 }

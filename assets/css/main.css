@@ -275,6 +275,10 @@ body {
     anchor-name: --tray-tooltip;
     anchor-scope: --tray-tooltip;
   }
+  .desktop-icon {
+    anchor-name: --nav-tooltip;
+    anchor-scope: --nav-tooltip;
+  }
 }
 
 .pixel-font {
