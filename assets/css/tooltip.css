@@ -1,0 +1,75 @@
+:root {
+  --color-tooltip: #fefedd;
+}
+
+.tooltip {
+  background: var(--color-tooltip);
+  border: 1px solid rgb(41, 18, 18);
+  padding: 1px 3px 1px 3px;
+  border-radius: 2px;
+  text-align: center;
+  display: none;
+}
+
+@supports (anchor-name: --test) {
+  .tooltip {
+    position: absolute;
+    max-width: 300px;
+    overflow-wrap: break-word;
+    white-space: normal;
+  }
+
+  .tray-icon .tooltip {
+    position-anchor: --tray-tooltip;
+    bottom: anchor(top);
+    justify-self: anchor-center;
+    margin-bottom: 2px;
+    margin-right: 10px;
+  }
+  .tray-icon:hover .tooltip {
+    display: block;
+  }
+  .desktop-icon .tooltip {
+    position-anchor: --nav-tooltip;
+    left: anchor(right);
+    align-self: anchor-center;
+    color: black;
+  }
+  .desktop-icon:hover .tooltip {
+    display: block;
+  }
+}
+
+/* .tooltip {
+  background: var(--color-tooltip);
+  border: 1px solid red;
+  justify-content: center;
+  padding: 0px 80px 0px 40px;
+} */
+
+/* Approach for non-anchor supported browsers */
+
+/* [data-tooltip] {
+    position: relative;
+}
+
+[data-tooltip]::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 100%;
+    right: 0;
+    background: var(--color-tooltip);
+    border: 1px solid black;
+    padding: 2px 6px;
+    pointer-events: none;
+    white-space: normal;
+    max-width: 200px;
+    width: max-content;
+
+    visibility: hidden;
+}
+
+[data-tooltip]:hover::after {
+    visibility: visible;
+    opacity: 1;
+} */
