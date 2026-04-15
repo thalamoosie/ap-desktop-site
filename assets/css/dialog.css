@@ -1,0 +1,15 @@
+.inner-window.dialog {
+    height: auto;
+}
+
+.tab-container {
+    display: flex;
+}
+
+.content-container {
+    display: flex;
+}
+
+.btn-container {
+    display: flex;
+}

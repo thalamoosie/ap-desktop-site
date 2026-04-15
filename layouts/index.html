@@ -1,6 +1,3 @@
 {{ define "main" }}
-  <div class="inner-window">
-    {{ partial "window/header" .Site.Data.windows.main }}
-    {{ partial "window/terminal-body" }}
-  </div>
-{{ end }}
+    {{ partial "window/system-info" . }}
+{{ end }}   
