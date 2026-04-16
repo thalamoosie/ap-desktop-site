@@ -8,15 +8,23 @@
 .tab-container {
     display: flex;
     justify-content: flex-start;
-    background: yellow;
-    height: 64px;
+    background: var(--main-gray);
+    align-items: flex-end;
+    margin-top: 8px;
+    margin-left: 10px;
+}
+
+.tab-container:empty {
+    display: none;
 }
 
 .content-container {
     display: flex;
-    background: red;
+    background: var(--main-gray);
     padding: 18px;
     flex-direction: column;
+    margin-right: 10px;
+    margin-left: 10px;
 }
 
 .btn-container {
@@ -37,6 +45,9 @@
   font-size: 16px;
 }
 
+.raised {
+  box-shadow: var(--border-raised-outer), var(--border-raised-inner);
+}
 /* System Information Specific Styles */
 
 .sys-info-row {
@@ -64,6 +75,7 @@
 }
 
 .sys-tab {
-    background: green;
-    border: 2px solid limegreen;
+    background: var(--main-gray);
+    padding: 4px 8px;
+    border-radius: 3px 3px 0 0;
 }
