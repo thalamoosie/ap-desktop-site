@@ -77,5 +77,45 @@
 .sys-tab {
     background: var(--main-gray);
     padding: 4px 8px;
+    border: none;
+    font-family: inherit;
+    font-size: inherit;
+    cursor: default;
     border-radius: 3px 3px 0 0;
+    box-shadow:
+        inset 1px 1px var(--highlight-color),
+        inset -1px 0 var(--frame-shadow),
+        inset 2px 2px var(--light-gray),
+        inset -2px 0 var(--dark-gray);
+}
+
+.sys-tab.active {
+    position: relative;
+    z-index: 1;
+    padding: 6px 10px 6px;
+    margin-right: -2px;
+    background: var(--main-gray);
+}
+
+.sys-tab:focus {
+    outline: none;
+}
+
+.sys-tab:focus > span {
+    outline: 1px dotted black;
+    outline-offset: 2px;
+}
+
+.sys-tab.active:not(:first-child) {
+    margin-left: -2px;
+}
+
+.sys-tab.active::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 2px;
+    right: 2px;
+    height: 4px;
+    background: var(--main-gray);
 }
