@@ -1,8 +1,15 @@
-<div class="inner-window dialog">
+<div class="inner-window dialog pixel-font">
     {{ partial "window/header" .Site.Data.windows.sysinfo }}
     <div class="tab-container">
-        TABS HERE
+        <div class="sys-tab">IMATAB</div>
+        <div class="sys-tab">IMATAB</div>
     </div>
-    <div class="content-container"></div>
-    <div class="btn-container">BUTTON</div>
+    <div class="content-container">
+        <div class="sys-info-row">
+            <div class="sys-info-img">IMG</div>
+            <div class="sys-info-txt">STATS</div>
+        </div>
+        <div class="sys-info-row"></div>
+    </div>
+    <div class="btn-container"><button class="btn">Cancel</button></div>
 </div>

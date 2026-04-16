@@ -1,15 +1,69 @@
+/* TODO: Separate into other component later during refactor */
+
 .inner-window.dialog {
     height: auto;
+    width: 800px;
 }
 
 .tab-container {
     display: flex;
+    justify-content: flex-start;
+    background: yellow;
+    height: 64px;
 }
 
 .content-container {
     display: flex;
+    background: red;
+    padding: 18px;
+    flex-direction: column;
 }
 
 .btn-container {
     display: flex;
+    justify-content: flex-end;
+    padding: 18px;
+}
+
+.btn {
+  background: var(--main-gray);
+  border: none;
+  box-shadow: var(--border-raised-outer), var(--border-raised-inner);
+  padding: 4px 16px;
+  height: 30px;
+  min-width: 100px;
+  font-family: inherit;
+  cursor: default;
+  font-size: 16px;
+}
+
+/* System Information Specific Styles */
+
+.sys-info-row {
+    display: flex;
+    box-sizing: border-box;
+    width: auto;
+    gap: 12px;
+    background-color: blue;
+    height: 400px;
+}
+
+.sys-info-row:empty {
+    display: none;
+}
+
+.sys-info-img {
+    flex: 1;
+    background: pink;
+    padding: 20px;
+}
+
+.sys-info-txt {
+    flex: 1;
+    padding: 20px;
+}
+
+.sys-tab {
+    background: green;
+    border: 2px solid limegreen;
 }
