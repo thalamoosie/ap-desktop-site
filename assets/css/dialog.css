@@ -2,7 +2,8 @@
 
 .inner-window.dialog {
     height: auto;
-    width: 800px;
+    width: 600px;
+    max-width: 100%;
 }
 
 .tab-container {
@@ -31,6 +32,8 @@
     display: flex;
     justify-content: flex-end;
     padding: 18px;
+    gap: 4px;
+
 }
 
 .btn {
@@ -55,7 +58,6 @@
     box-sizing: border-box;
     width: auto;
     gap: 12px;
-    background-color: blue;
     height: 400px;
 }
 
@@ -64,9 +66,10 @@
 }
 
 .sys-info-img {
+    display: flex;
     flex: 1;
-    background: pink;
     padding: 20px;
+
 }
 
 .sys-info-txt {
@@ -118,4 +121,20 @@
     right: 2px;
     height: 4px;
     background: var(--main-gray);
+}
+
+@media (max-width: 480px) {
+    .sys-info-row {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .sys-info-img {
+        align-items: center;
+        justify-content: center;
+    }
+
+    .inner-window.dialog {
+        width: 100%;
+    }
 }
