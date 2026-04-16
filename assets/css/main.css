@@ -118,10 +118,13 @@ body {
 .window-header {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   background: var(--blue-gradient);
   height: var(--window-title-height);
   color: var(--highlight-color);
-  font-weight: bold;
+  font-weight: normal;
+  padding: 6px;
+  text-shadow: 1px 0 0 currentColor;
 }
 
 .window-controls {
@@ -191,12 +194,6 @@ body {
   flex-direction: column;
 }
 
-.window-header {
-  padding: 6px;
-  align-items: center;
-  text-shadow: 1px 0 0 currentColor;
-  font-weight: normal;
-}
 
 .window-body {
   padding: 10px;
