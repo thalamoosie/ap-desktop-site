@@ -1,0 +1,46 @@
+:root {
+    --terminal-background: black;
+    --terminal-text-color: limegreen;
+}
+
+@font-face {
+    font-family: 'DOS';
+    src: url("/fonts/ModernDOS8x16.ttf") format("truetype");
+}
+
+.neofetch {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+}
+
+.terminal-frame {
+    display: flex;
+    flex-direction: column;
+    padding: 3x;
+    gap: 6px;
+}
+
+.terminal-body {
+    display: flex;
+    flex-direction: column;
+}
+
+.terminal-pane {
+    font-family: 'DOS', monospace;
+    background: var(--terminal-background);
+    color: var(--terminal-text-color);
+    
+}
+
+.terminal-pane:first-child {
+    flex: 3;
+}
+.terminal-pane:last-child {
+    flex: 1;
+}
+
+/* .terminal-pane + .terminal-pane {
+  border-top: 3px solid var(--dark-gray);
+  margin-top: 3px;
+} */

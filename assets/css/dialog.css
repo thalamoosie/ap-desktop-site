@@ -1,0 +1,140 @@
+/* TODO: Separate into other component later during refactor */
+
+.inner-window.dialog {
+    height: auto;
+    width: 600px;
+    max-width: 100%;
+}
+
+.tab-container {
+    display: flex;
+    justify-content: flex-start;
+    background: var(--main-gray);
+    align-items: flex-end;
+    margin-top: 8px;
+    margin-left: 10px;
+}
+
+.tab-container:empty {
+    display: none;
+}
+
+.content-container {
+    display: flex;
+    background: var(--main-gray);
+    padding: 18px;
+    flex-direction: column;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+.btn-container {
+    display: flex;
+    justify-content: flex-end;
+    padding: 18px;
+    gap: 4px;
+
+}
+
+.btn {
+  background: var(--main-gray);
+  border: none;
+  box-shadow: var(--border-raised-outer), var(--border-raised-inner);
+  padding: 4px 16px;
+  height: 30px;
+  min-width: 100px;
+  font-family: inherit;
+  cursor: default;
+  font-size: 16px;
+}
+
+.raised {
+  box-shadow: var(--border-raised-outer), var(--border-raised-inner);
+}
+/* System Information Specific Styles */
+
+.sys-info-row {
+    display: flex;
+    box-sizing: border-box;
+    width: auto;
+    gap: 12px;
+    height: 400px;
+}
+
+.sys-info-row:empty {
+    display: none;
+}
+
+.sys-info-img {
+    display: flex;
+    flex: 1;
+    padding: 20px;
+
+}
+
+.sys-info-txt {
+    flex: 1;
+    padding: 20px;
+}
+
+.sys-tab {
+    background: var(--main-gray);
+    padding: 4px 8px;
+    border: none;
+    font-family: inherit;
+    font-size: inherit;
+    cursor: default;
+    border-radius: 3px 3px 0 0;
+    box-shadow:
+        inset 1px 1px var(--highlight-color),
+        inset -1px 0 var(--frame-shadow),
+        inset 2px 2px var(--light-gray),
+        inset -2px 0 var(--dark-gray);
+}
+
+.sys-tab.active {
+    position: relative;
+    z-index: 1;
+    padding: 6px 10px 6px;
+    margin-right: -2px;
+    background: var(--main-gray);
+}
+
+.sys-tab:focus {
+    outline: none;
+}
+
+.sys-tab:focus > span {
+    outline: 1px dotted black;
+    outline-offset: 2px;
+}
+
+.sys-tab.active:not(:first-child) {
+    margin-left: -2px;
+}
+
+.sys-tab.active::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 2px;
+    right: 2px;
+    height: 4px;
+    background: var(--main-gray);
+}
+
+@media (max-width: 480px) {
+    .sys-info-row {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .sys-info-img {
+        align-items: center;
+        justify-content: center;
+    }
+
+    .inner-window.dialog {
+        width: 100%;
+    }
+}

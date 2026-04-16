@@ -1,0 +1,11 @@
+main:
+  windowTitle: "Untitled Duckument - QuackPad.exe"
+  min: true
+  max: true
+  close: true 
+
+sysinfo:
+  windowTitle: "System Properties"
+  min: false
+  max: false
+  close: true

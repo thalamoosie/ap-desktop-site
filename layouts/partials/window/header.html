@@ -1,0 +1,8 @@
+          <div class="window-header pixel-font">
+            <p>{{ .windowTitle }}</p>
+            <div class="window-controls">
+              {{ if .min }} <div class="window-btn btn-min"></div>{{ end }}
+              {{ if .max }} <div class="window-btn btn-max"></div>{{ end }}
+              {{ if .close }} <div class="window-btn btn-close"></div> {{ end }}
+            </div>
+          </div>
